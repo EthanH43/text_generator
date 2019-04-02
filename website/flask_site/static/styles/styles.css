@@ -1,21 +1,43 @@
 
 body {
-  text-align: center;
-  background-color: #f0e8c5;
+    text-align: center;
+    background-color: #f0e8c5;
 }
 
 div {
-  margin-top: 15px;
+    margin-top: 15px;
 }
 
 .image-section {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .section-style {
-  margin-right: 25px;
-  margin-left: 25px;
-  background-color: white;
+	margin-right: 25px;
+    margin-left: 25px;
+    background-color: white;
 }
+
+.button-section {
+	margin-right: 200px;
+    margin-left: 200px;
+}
+
+.button {
+  background-color: #f44336;
+  border-radius: 4px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  border: None;
+  padding: 32px 32px;
+}
+
+.button:hover {
+	background-color: #4CAF50;
+}
+
+
+
+
 
