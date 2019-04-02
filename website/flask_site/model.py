@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-import tensorflow.keras as keras
+import tensorflow as tf
 import csv
 import random
 import pickle
+import numpy as np
 
 class Model:
 	"""Class that implements the ML model.
@@ -19,31 +20,12 @@ class Model:
 	"""
 
 	def __init__(self, model_file=''):
-		
 		if model_file:
-			self._model = keras.models.load_model(model_file)
+			self._model = tf.keras.models.load_model(model_file)
 		else:
-			self._model = keras.models.load_model('/Users/schuylerjackson/text_generator/Saved_models/first_char_model.h5')
-		#_trump_tweets = self._get_data()
-		with open('data/model.data', 'rb') as file:
+			self._model = tf.keras.models.load_model('/Users/schuylerjackson/text_generator/Saved_models/first_char_model.h5')
+		with open('/Users/schuylerjackson/text_generator/website/flask_site/data/model.data', 'rb') as file:
 			self._model_data = pickle.load(file)
-
-
-	
-	def _get_data(self):
-		"""Imports Trump tweets from csv file
-
-		Returns:
-			list of Trump tweets.
-		"""
-		tweets_lst = []
-		path = '/Users/schuylerjackson/text_generator/Load_Tweets/data/original_tweets.csv'
-		with open(path) as csvfile:
-			reader = csv.reader(csvfile)
-			for row in reader:
-				tweets_lst.append(row[2])
-
-		return tweets_lst
 
 	def get_tweet(self):
 		"""Gets a random tweet from _trump_tweets.
@@ -62,19 +44,42 @@ class Model:
 		"""
 
 		data = self._model_data
-		char = data['char']
+		chars = data['chars']
 		maxlen = data['maxlen']
+		#maxlen = 30
 		char_to_index = data['char_to_index']
 		index_to_char = data['index_to_char']
+		
+		starter = self.get_tweet()[:30]
+		generated = starter
+		for i in range(0, 120):
+			x_pred = np.zeros((1, maxlen, len(chars)), dtype=np.bool)
+			for t, char in enumerate(starter):
+				x_pred[0, t, char_to_index[char]] = 1
 
-		return None
+			pred = self._model.predict(x_pred)[0]
+			next_index = self.sample(pred)
+			next_char = index_to_char[next_index]
+				
+			generated += next_char
+			starter = starter[1:] + next_char		
+		return generated
 
+	def sample(self, preds, temperature=1.0):
+		# helper function to sample an index from a probability array
+		preds = np.asarray(preds).astype('float64')
+		preds = np.log(preds) / temperature
+		exp_preds = np.exp(preds)
+		preds = exp_preds / np.sum(exp_preds)
+		probas = np.random.multinomial(1, preds, 1)
+		return np.argmax(probas)
 
 def make():
 	mod = Model()
-	return mod.get_tweet()
+	return mod.get_fake()
 
 print(make())
+
 
 
 

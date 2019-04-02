@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from flask import Flask, render_template
+import flask_site.model as model
 
 def create_app(test_config=None):
 	"""Create and configure the app.
@@ -36,7 +37,8 @@ def create_app(test_config=None):
 
 	@app.route('/webdev')
 	def webdev():
-		return render_template('index.html')
+		mod = model.Model()
+		return render_template('index.html', real=mod.get_tweet(),fake=mod.get_fake())
 
 
 	return app
