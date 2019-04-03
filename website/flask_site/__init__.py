@@ -38,7 +38,9 @@ def create_app(test_config=None):
 	@app.route('/webdev')
 	def webdev():
 		mod = model.Model()
-		return render_template('index.html', real=mod.get_tweet(),fake=mod.get_fake())
+		real = mod.get_tweet()
+		fake = mod.get_fake()
+		return render_template('index.html', real=real, fake=fake)
 
 
 	return app
