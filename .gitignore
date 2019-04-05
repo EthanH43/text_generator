@@ -3,6 +3,8 @@
 
 word_embeding
 
+training_checkpoints/
+
 venv/
 
 *.pyc
