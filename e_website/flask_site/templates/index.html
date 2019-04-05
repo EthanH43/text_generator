@@ -51,86 +51,94 @@
 		<link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}" />
 
 
-		<h1>
-				Which tweet is real?
-				</h1>
-				
-			
-						
-						<div class="tw-block-parent">
-						  <div class="timeline-TweetList-tweet">
-							<div class="timeline-Tweet">
-							  <div class="timeline-Tweet-brand">
-								<div class="Icon Icon--twitter"></div>
-							  </div> <!-- brand -->
-							  <div class="timeline-Tweet-author">
-								<div class="TweetAuthor">
-									<a class="TweetAuthor-link" href="#channel"> </a>
-									<span class="TweetAuthor-avatar"> 
-										<div class="Avatar"></div>
-									</span>
-									<span class="TweetAuthor-name">TwitterDev </span>
-									<span class="Icon Icon--verified"> </span>
-									<span class="TweetAuthor-screenName">@TwitterDev </span>
-								  </div> <!-- tweet author -->
-							  </div> <!-- timeline-tweet-author -->
-							  <div  class="timeline-Tweet-text">
-								Checkout this new website!
-								<a href="https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/05/12/104466932-PE_Color.240x240.jpg?v=1494613853">@DonaldTrump </a>
-								<span>we doing it! </span>
-								<a href="#">#DidHeSayThis? </a>
-								<span> check out </span>
-								<a href="https://www.linkedin.com/in/schuyler-jackson/">Spike's Linked In </a>
-							  </div> <!-- tweet text -->
-							  <div class="timeline-Tweet-metadata">  
-								 <span class="timeline-Tweet-timestamp">9h</span>
-							  </div> <!--timeline-tweet-metadata -->
-							  <ul class="timeline-Tweet-actions">
-								<li class="timeline-Tweet-action"><a class="Icon Icon--heart" href="#"></a></li>
-								<li class="timeline-Tweet-action"><a class="Icon Icon--share" href="#"></a></li>
-							  </ul> <!-- timeline-tweet-actions -->
-							</div> <!-- timeline-tweet -->
-						  </div> <!-- timeline-tweetlist-tweet -->
-						</div> <!-- tw-block-parent -->
+		<!DOCTYPE html>
 
-						
-						
-						<div class="tw-block-parent">
-						  <div class="timeline-TweetList-tweet2">
-							<div class="timeline-Tweet">
-							  <div class="timeline-Tweet-brand">
-								<div class="Icon Icon--twitter"></div>
-							  </div> <!-- brand -->
-							  <div class="timeline-Tweet-author">
-								<div class="TweetAuthor">
-									<a class="TweetAuthor-link" href="#channel"> </a>
-									<span class="TweetAuthor-avatar"> 
-										<div class="Avatar"></div>
-									</span>
-									<span class="TweetAuthor-name">TwitterDev </span>
-									<span class="Icon Icon--verified"> </span>
-									<span class="TweetAuthor-screenName">@TwitterDev </span>
-								  </div> <!-- tweet author -->
-							  </div> <!-- timeline-tweet-author -->
-							  <div  class="timeline-Tweet-text">
-								Checkout this new website!
-								<a href="https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/05/12/104466932-PE_Color.240x240.jpg?v=1494613853">@DonaldTrump </a>
-								<span>we doing it! </span>
-								<a href="#">#DidHeSayThis? </a>
-								<span> check out </span>
-								<a href="https://www.linkedin.com/in/schuyler-jackson/">Spike's Linked In </a>
-							  </div> <!-- tweet text -->
-							  <div class="timeline-Tweet-metadata">  
-								 <span class="timeline-Tweet-timestamp">9h</span>
-							  </div> <!--timeline-tweet-metadata -->
-							  <ul class="timeline-Tweet-actions">
-								<li class="timeline-Tweet-action"><a class="Icon Icon--heart" href="#"></a></li>
-								<li class="timeline-Tweet-action"><a class="Icon Icon--share" href="#"></a></li>
-							  </ul> <!-- timeline-tweet-actions -->
-							</div> <!-- timeline-tweet -->
-						  </div> <!-- timeline-tweetlist-tweet -->
-						</div> <!-- tw-block-parent -->
-				
+<h1>
+Which tweet is real?
+</h1>
+
+
+<div class="wrapper"> 
+<div class="tw-block-parent">
+  <div class="timeline-TweetList-tweet">
+    <div class="timeline-Tweet">
+      <div class="timeline-Tweet-brand">
+        <div class="Icon Icon--twitter"></div>
+      </div> <!-- brand -->
+      <div class="timeline-Tweet-author">
+        <div class="TweetAuthor">
+            <a class="TweetAuthor-link" href="#channel"> </a>
+            <span class="TweetAuthor-avatar"> 
+                <div class="Avatar"></div>
+            </span>
+            <span class="TweetAuthor-name">TwitterDev </span>
+            <span class="Icon Icon--verified"> </span>
+            <span class="TweetAuthor-screenName">@TwitterDev </span>
+          </div> <!-- tweet author -->
+      </div> <!-- timeline-tweet-author -->
+      <div  class="timeline-Tweet-text">
+        {{fake}}
+      </div> <!-- tweet text -->
+      <div class="timeline-Tweet-metadata">  
+         <span class="timeline-Tweet-timestamp">9h</span>
+      </div> <!--timeline-tweet-metadata -->
+      <ul class="timeline-Tweet-actions">
+        <li class="timeline-Tweet-action"><a class="Icon Icon--heart" href="#"></a></li>
+        <li class="timeline-Tweet-action"><a class="Icon Icon--share" href="#"></a></li>
+      </ul> <!-- timeline-tweet-actions -->
+    </div> <!-- timeline-tweet -->
+  </div> <!-- timeline-tweetlist-tweet -->
+  
+</div> <!-- tw-block-parent -->
+<div class="button-section">
+				<button onclick="location.href='http://www.google.com'" class="button" type="button">Real??</button>
+      </div> <!-- button-section -->
+ </div> <!-- wrapper -->
+
+
+<div class="wrapper">
+
+<div class="tw-block-parent">
+  <div class="timeline-TweetList-tweet2">
+    <div class="timeline-Tweet">
+      <div class="timeline-Tweet-brand">
+        <div class="Icon Icon--twitter"></div>
+      </div> <!-- brand -->
+      <div class="timeline-Tweet-author">
+        <div class="TweetAuthor">
+            <a class="TweetAuthor-link" href="#channel"> </a>
+            <span class="TweetAuthor-avatar"> 
+                <div class="Avatar"></div>
+            </span>
+            <span class="TweetAuthor-name">TwitterDev </span>
+            <span class="Icon Icon--verified"> </span>
+            <span class="TweetAuthor-screenName">@TwitterDev </span>
+          </div> <!-- tweet author -->
+      </div> <!-- timeline-tweet-author -->
+      <div  class="timeline-Tweet-text">
+        Checkout this new website!
+        <a href="https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/05/12/104466932-PE_Color.240x240.jpg?v=1494613853">@DonaldTrump </a>
+        <span>we doing it! </span>
+        <a href="#">#DidHeSayThis? </a>
+        <span> check out </span>
+        <a href="https://www.linkedin.com/in/schuyler-jackson/">Spike's Linked In </a>
+      </div> <!-- tweet text -->
+      <div class="timeline-Tweet-metadata">  
+         <span class="timeline-Tweet-timestamp">9h</span>
+      </div> <!--timeline-tweet-metadata -->
+      <ul class="timeline-Tweet-actions">
+        <li class="timeline-Tweet-action"><a class="Icon Icon--heart" href="#"></a></li>
+        <li class="timeline-Tweet-action"><a class="Icon Icon--share" href="#"></a></li>
+      </ul> <!-- timeline-tweet-actions -->
+    </div> <!-- timeline-tweet -->
+  </div> <!-- timeline-tweetlist-tweet -->
+</div> <!-- tw-block-parent -->
+<div class="button-section">
+				<button onclick="location.href='http://www.google.com'" class="button" type="button">Real??</button>
+      </div> <!-- button-section -->
+
+</div> <!-- wrapper -->
+	
 
 </body>
 </html>

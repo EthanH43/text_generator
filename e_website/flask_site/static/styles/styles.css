@@ -55,22 +55,31 @@ div {
  
 
  
- .tw-block-parent {
+ 
+.wrapper {
 	width: 40%;
+	display: inline-block;
+	text-align: center;
+   }
+  
+  .tw-block-parent {
+	width: 100%;
 	font: 10px Roboto, Helvetica, Arial, Tahoma, sans-serif;
 	font-weight: 300;
 	color: #292F33;
 	display: inline-block;
+	text-align: left;
   }
   
   .timeline-TweetList-tweet {
-	border-top: 1px solid rgba(15, 70, 100, 0.12);
-	border: 2px solid rgb(185, 185, 185);
+	  border-top: 1px solid rgba(15, 70, 100, 0.12);
+	border: 2px solid rgb(214, 214, 215);
 	border-radius: 8px;
   }
+  
   .timeline-TweetList-tweet2 {
-	border-top: 1px solid rgba(15, 70, 100, 0.12);
-	border: 2px solid rgb(185, 185, 185);
+	  border-top: 1px solid rgba(15, 70, 100, 0.12);
+	border: 2px solid rgb(214, 214, 215);
 	border-radius: 8px;
 	margin-left: 30px;
   }
@@ -216,3 +225,21 @@ div {
   .Icon--share:hover {
 	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1Ni44IDcyIj48cGF0aCBmaWxsPSJub25lIiBkPSJNMC0uN2g0OHY3MkgweiIvPjxwYXRoIGNsYXNzPSJpY29uIiBmaWxsPSIjMDA4NGI0IiBkPSJNNTIuOCAzMi45TDQyLjIgMjIuM2MtMS40LTEuNC0zLjYtMS40LTUgMHMtMS40IDMuNiAwIDVsNC42IDQuNkgyMC45Yy0xLjkgMC0zLjUgMS42LTMuNSAzLjVzMS42IDMuNSAzLjUgMy41aDIwLjlsLTQuNiA0LjZjLTEuNCAxLjQtMS40IDMuNiAwIDUgLjcuNyAxLjYgMSAyLjUgMXMxLjgtLjMgMi41LTFsMTAuNi0xMC42YzEuNC0xLjQgMS40LTMuNiAwLTV6Ii8+PHBhdGggY2xhc3M9Imljb24iIGZpbGw9IiMwMDg0YjQiIGQ9Ik0yNC40IDQ5LjRoLTEzYy0uNiAwLTEuMS0uNS0xLjItMS4xVjIyLjRjMC0uNy41LTEuMiAxLjItMS4yaDEyLjljMS45IDAgMy41LTEuNiAzLjUtMy41cy0xLjYtMy41LTMuNS0zLjVIOC45Yy0zLjEgMC01LjcgMi41LTUuNyA1Ljd2MzFjMCAzLjEgMi41IDUuNyA1LjcgNS43aDE1LjVjMS45IDAgMy41LTEuNiAzLjUtMy41LjEtMi4xLTEuNS0zLjctMy41LTMuN3oiLz48L3N2Zz4=');
   }
+  
+  .button-section {
+  }
+  
+  .button {
+	border-radius: 8px;
+	border-color: rgb(49, 115, 181);
+	padding-top: 10px;
+	padding-right: 50px;
+	padding-bottom: 10px;
+	padding-left: 50px;
+  }
+  
+  .button:hover {
+	  background-color: #00BFFF;
+  }
+  
+  
