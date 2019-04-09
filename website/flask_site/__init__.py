@@ -2,7 +2,7 @@
 
 from flask import Flask, render_template
 import flask_site.model as model
-
+import random
 def create_app(test_config=None):
 	"""Create and configure the app.
 	
@@ -40,7 +40,11 @@ def create_app(test_config=None):
 		mod = model.Model()
 		real = mod.get_tweet()
 		fake = mod.get_fake()
-		return render_template('index.html', real=real, fake=fake)
+		real_or_fake = [real, fake]
+		guess = random.randint(0, 1)
+		guess_one = real_or_fake[guess]
+		guess_two = real_or_fake[1 - guess]
+		return render_template('index.html', real=guess_one, fake=guess_two)
 
 
 	return app
