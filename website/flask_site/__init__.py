@@ -28,8 +28,8 @@ def create_app(test_config=None):
 		app.config.from_mapping(test_config)
 
 	@app.route('/')
-	def index():
-		return 'Index Page'
+	def landing():
+		return render_template('landing_index.html')
 
 	@app.route('/hello')
 	def hello():
@@ -40,6 +40,7 @@ def create_app(test_config=None):
 		mod = model.Model()
 		real = mod.get_tweet()
 		fake = mod.get_fake()
+		
 		real_or_fake = [real, fake]
 		guess = random.randint(0, 1)
 		guess_one = real_or_fake[guess]

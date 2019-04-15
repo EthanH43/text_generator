@@ -4,6 +4,7 @@ import csv
 import random
 import pickle
 import numpy as np
+import re
 
 class Model:
 	"""Class that implements the ML model.
@@ -47,6 +48,9 @@ class Model:
 		data = self._model_data
 		chars = data['chars']
 		maxlen = data['maxlen']
+		url_lst = data['url_lst']
+		url_i = random.randint(0, len(url_lst)-1)
+		url = url_lst[url_i]
 		#maxlen = 30
 		char_to_index = data['char_to_index']
 		index_to_char = data['index_to_char']
@@ -65,7 +69,7 @@ class Model:
 				
 			generated += next_char
 			starter = starter[1:] + next_char		
-		return generated
+		return re.sub('[URL]', url, generated)
 
 	def sample(self, preds, temperature=1.0):
 		"""helper function to sample an index from a probability array."""

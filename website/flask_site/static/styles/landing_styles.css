@@ -1,0 +1,16 @@
+
+
+body, html {
+    text-align: center;
+    height: 100%;
+}
+.image {
+    background-image: url("https://source.unsplash.com/random/400x200/?California");
+    
+    height: 100%; /* cover the total height of the webpage. */
+
+    /* center the image and make the display nice. */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
