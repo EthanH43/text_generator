@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
 from flask import Flask, render_template
-import flask_site.model as model
+# import flask_site.model as model
 import random
+import pickle
+
 def create_app(test_config=None):
 	"""Create and configure the app.
 	
@@ -27,6 +29,13 @@ def create_app(test_config=None):
 		#Load the test config if passed in.
 		app.config.from_mapping(test_config)
 
+	def get_random(lst):
+		"""Returns a random element of the list."""
+		
+		length = len(lst)
+		index = random.randint(0, length-1)
+		return lst[index]
+
 	@app.route('/')
 	def landing():
 		return render_template('landing_index.html')
@@ -37,12 +46,18 @@ def create_app(test_config=None):
 
 	@app.route('/webdev')
 	def webdev():
-		mod = model.Model()
-		real = mod.get_tweet()
-		fake = mod.get_fake()
-		
+		# mod = model.Model()
+		path = "/Users/schuylerjackson/text_generator/website/flask_site/data/model.data"
+		with open(path, "rb") as file:
+			data = pickle.load(file)
+
+		# real = mod.get_tweet()
+		# fake = mod.get_fake()
+		real = get_random(data["original_tweets"])
+		fake = get_random(data["fake_tweets"])
+
 		real_or_fake = [real, fake]
-		guess = random.randint(0, 1)
+		guess = get_random([0, 1])
 		guess_one = real_or_fake[guess]
 		guess_two = real_or_fake[1 - guess]
 		return render_template('index.html', real=guess_one, fake=guess_two)
