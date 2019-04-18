@@ -95,6 +95,22 @@ footer{
   /*   border-top: none;
 	 */
 	 }
+
+	.ugi {
+		font: 10px Roboto;
+		font-weight: 300;
+		color: #292F33;
+		display: inline-block;
+		text-align: center;
+	}
+
+	.WRONG {
+		font: 20px Arial;
+		font-weight: 300;
+		color: rgb(119, 0, 0);
+
+
+	}
   
   .timeline-Tweet {
 	position: relative;

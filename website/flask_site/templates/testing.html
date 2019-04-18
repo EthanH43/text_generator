@@ -1,0 +1,78 @@
+<html>
+<head>
+<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+function myFunction() { 
+	document.getElementById("timeline-Tweet").style.display="none"; 
+    document.getElementById("button-section").style.display="none"; 
+	document.getElementById("ugi").style="display:inline-block; font: 20px Roboto;font-weight: 300;color: #292F33; display: inline-block; text-align: center;"; 
+
+
+}
+</script>
+
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#WRONG").fadeIn(1000)
+    setTimeout(location.reload.bind(location), 1500);
+   
+  });
+});
+</script>
+
+
+</head>
+<body>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}" />
+
+  <div class="wrapper" id="wrapper"> 
+    <div class="tw-block-parent">
+    <div class="timeline-TweetList-tweet" id="timeline-TweetList-tweet">
+      <div class="ugi" id="ugi" style="display:none;"> it was... </div>
+      <div  class= "WRONG" id="WRONG" 
+      style="font: 30px Arial;
+      font-weight: 300;
+      color: rgb(119, 0, 0);
+      display:none;
+      text-align: center">
+            FAKE </div>
+      <div class="timeline-Tweet" id="timeline-Tweet">
+          
+        <div class="timeline-Tweet-brand">
+          <div class="Icon Icon--twitter"></div>
+        </div> <!-- brand -->
+        <div class="timeline-Tweet-author">
+          <div class="TweetAuthor">
+              <a class="TweetAuthor-link" href="#channel"> </a>
+              <span class="TweetAuthor-avatar"> 
+                  <div class="Avatar"></div>
+              </span>
+              <span class="TweetAuthor-name">Donald J. Trump </span>
+              <span class="Icon Icon--verified"> </span>
+              <span class="TweetAuthor-screenName">@realDonaldTrump </span>
+            </div> <!-- tweet author -->
+        </div> <!-- timeline-tweet-author -->
+        <div  class="timeline-Tweet-text">
+          testing
+        </div> <!-- tweet text -->
+        <div class="timeline-Tweet-metadata">  
+          <span class="timeline-Tweet-timestamp">9h</span>
+        </div> <!--timeline-tweet-metadata -->
+        <ul class="timeline-Tweet-actions">
+          <li class="timeline-Tweet-action"><a class="Icon Icon--heart" href="#"></a></li>
+          <li class="timeline-Tweet-action"><a class="Icon Icon--share" href="#"></a></li>
+        </ul> <!-- timeline-tweet-actions -->
+      </div> <!-- timeline-tweet -->
+    </div> <!-- timeline-tweetlist-tweet -->
+    
+  </div> <!-- tw-block-parent -->
+  <div class="button-section" id="button-section">
+          <button onclick="myFunction()" class="button" type="button">Real</button>
+        </div> <!-- button-section -->
+  </div> <!-- wrapper -->
+
+ </div>
+  </body>
+</html>
