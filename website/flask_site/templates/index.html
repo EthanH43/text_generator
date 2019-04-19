@@ -186,64 +186,35 @@
 
   <div id="Contact" class="tabcontent">Whatup</div> <!-- Contact-->
   <div id="About" class="tabcontent">
-    <p>
-      Why does this website exist??
-      We built this website as our final project for Google’s applied machine learning intensive, 
-      a 10-week machine learning boot camp where we learned how to use industry standard tools 
-      such as Tensorflow, Keras, and Scikit learn.
-
-      little about the technology!
-      To build the generating models we used tensorflow, and the keras framework. We developed our
-      models using jupyter notebooks, and used the pandas module in python to handle our data. 
-    </p>
+      <p>
+        Hey, welcome to our website. We built this to showcase our final project for Google's Applied Machine Learning Intensive (AMLI).
+        Our project idea was to develop a website that would display real tweets next to fake ones and ask the user to guess the real one.
+        We wanted to use machine learning to generate the text, and our first idea was to use a LSTM based neural network. Our results were
+        mixed. We tried word level and character level modeling, but both produced subpar results. We were struggling with the development 
+        of our own models, so we looked to see if we were reinventing the wheel, we where!
+      </p>
+      <p>
+        In February 2019 the ML community saw a great advance in language modeling with 
+        <a href="https://openai.com/blog/better-language-models/">Open ai's</a> 
+        release of their gpt-2 117M model.Although this isn't the full model they used in their paper, the results are still 
+        impressive. Thanks to
+        <a href="https://github.com/nshepperd/gpt-2/tree/finetuning">nsheppered's</a> 
+        addtions to the original git repository, we are were able to train this state of the art model on our twitter data,
+        producing some convincing fake tweets.
+      </p>
+      <p>
+        Producing fake tweets is nothing new, in our research we came across many examples, but the only one that really stuck out to us
+        was 
+        <a href="https://twitter.com/DeepDrumpf?lang=en">DeepDrumpf</a>
+        created by @BradHayes. We were unable to speak with Mr. Hayes, so we don't know what he uses, but his results are 
+        impressive, his work was our original performance benchmark. All the examples we came across were utilizing a neural net with LSTM 
+        or GRU nodes. We believe this to be the first application fo GPT-2 117M to the tweet generation problem. Of course this is a cute 
+        application of some powerful technology, but we believe it to be an eye opening experiment with the possibilities of misinformation.
+      </p>
   </div> <!-- About-->
 
-
-
-
-
-
-
-
-
-	<!--
-		<h1>Welcome to the Trump Twitter Comparison Challenge!</h1>
-		<h2>This is a website designed to compare real tweets and computer generated tweets. 
-		<br>See if you can tell the difference.</h2>
-		<h4 id='date'></h4>
-		<link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}" />
-		<script async src="{{ url_for('static', filename='javascript/index.js') }}"></script>
-		<meta charset="UTF-8">
-
-		<div class="image-section">
-			<div class="section-style">
-			--><!--
-				<img src="https://source.unsplash.com/random/400x200/?Washington State" alt="" />
-				--><!--
-				<p>{{ real }}</p>
-			</div>
-
-			<div class="section-style">
-			--><!--
-				<img src="https://source.unsplash.com/random/400x200/?California" alt="" />
-				--><!--
-				<p>{{ fake }}</p>
-			</div>
-		</div>
-
-		<div class="image-section">
-			<div class="button-section">
-				<button onclick="location.href='http://www.google.com'" class="button" type="button">Real??</button>
-			</div>
-
-			<div class="button-section">
-				<button onclick="location.href='http://www.google.com'" class="button" type="button">Real??</button>
-			</div>
-		</div>
--->
-
 </section>
-<footer><p>schuyler.jackson@berkeley.edu  ethanhaik@ucla.edu</p></footer>
+<footer><p>schuyler.jackson@berkeley.edu<br/>ethanhaik@ucla.edu</p></footer>
 	</body>
 </html>
 
