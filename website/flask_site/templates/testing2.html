@@ -8,14 +8,41 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 function myFunction() { 
-	document.getElementById("timeline-Tweet").style.display="none"; 
-    document.getElementById("button-section").style.display="none"; 
-	document.getElementById("ugi").style="display:inline-block; font: 20px Roboto;font-weight: 300;color: #292F33; display: inline-block; text-align: center;"; 
+    var height= document.getElementById("timeline-TweetList-tweet").offsetHeight 
+    var width= document.getElementById("timeline-TweetList-tweet").offsetWidth
+    height = height - 0.1*height
+    width= width - 0.1*width
+    document.getElementById("timeline-Tweet").style="opacity:0"; 
+    document.getElementById("image").style="position: absolute; height:" +height + "px; width:"+width + "px; display: none; top: 5px; "; 
+
+    // document.getElementById("ugi").style="position: absolute;  display:inline-block; font: 20px Roboto;font-weight: 300;color: #292F33; text-align: center;"; 
+    document.getElementById("button-section").style="opacity:0"; 
+    // document.getElementById("newtext").style="position: absolute; width:" + width +"; height:" + height +';'; 
+
+
     $(document).ready(function(){
   
-    $("#WRONG").fadeIn(1000)
+    $("#image").fadeIn(1000)
     setTimeout(location.reload.bind(location), 1500);
    });
+
+}
+function myFunction2() { 
+    var height2= document.getElementById("timeline-TweetList-tweet2").offsetHeight 
+    var width2= document.getElementById("timeline-TweetList-tweet2").offsetWidth
+    height2 = height2 - 0.1*height2
+    width2= width2 - 0.1*width2
+    document.getElementById("timeline-Tweet2").style="opacity:0"; 
+    document.getElementById("image_real").style="position: absolute; height:" +height2 + "px; width:"+width2 + "px; display: none;  "; 
+
+    document.getElementById("button-section2").style="opacity:0"; 
+
+
+    $(document).ready(function(){
+
+    $("#image_real").fadeIn(1000)
+    setTimeout(location.reload.bind(location), 1500);
+    });
 
 }
 </script>
@@ -47,17 +74,30 @@ function myFunction() {
 <section>
 
 <div id="Trump" class="tabcontent">
-  <div class="wrapper"> 
-  <div class="tw-block-parent">
+        
+  <div class="wrapper" id="wrapper"> 
+       
+  <div class="tw-block-parent" id=tw-block-parent>
         <div class="timeline-TweetList-tweet" id="timeline-TweetList-tweet">
-                <div class="ugi" id="ugi" style="display:none;"> it was... </div>
+            <img style="display: none" class= "image" id="image" src={{ url_for("static", filename="robot_stare.jpg" )}}
+             alt="Fake">
+
+            
+            <!-- <div class="newtext" id="newtext" style= "position: absolute;"> -->
+            <!-- <div class="ugi" id="ugi" style="display:none;"> it was... </div>
                 <div  class= "WRONG" id="WRONG" 
                 style="font: 30px Arial;
                 font-weight: 300;
+                position: absolute;
                 color: rgb(119, 0, 0);
+                top: 20px;
                 display:none;
+                vertical-align: middle;
+               
+                justify-content: left;
                 text-align: center">
-                      FAKE </div>
+                      FAKE </div>  -->
+                    <!-- </div>    -->
                 <div class="timeline-Tweet" id="timeline-Tweet">
         <div class="timeline-Tweet-brand">
           <div class="Icon Icon--twitter"></div>
@@ -96,8 +136,10 @@ function myFunction() {
   <div class="wrapper">
 
   <div class="tw-block-parent">
-    <div class="timeline-TweetList-tweet2">
-      <div class="timeline-Tweet">
+    <div class="timeline-TweetList-tweet2" id="timeline-TweetList-tweet2">
+            <img style="display: none" class= "image_real" id="image_real" src={{ url_for("static", filename="Trump_stare.png" )}}
+            alt="Real">
+      <div class="timeline-Tweet" id="timeline-Tweet2">
         <div class="timeline-Tweet-brand">
           <div class="Icon Icon--twitter"></div>
         </div> <!-- brand -->
@@ -125,8 +167,8 @@ function myFunction() {
       </div> <!-- timeline-tweet -->
     </div> <!-- timeline-tweetlist-tweet -->
   </div> <!-- tw-block-parent -->
-  <div class="button-section" id="button-section">
-        <button onclick="myFunction()" class="button" type="button">Real</button>
+  <div class="button-section" id="button-section2">
+        <button onclick="myFunction2()" class="button" type="button">Real</button>
       </div> <!-- button-section -->
   </div> <!-- wrapper -->
 </div> <!-- Trump -->
@@ -269,7 +311,7 @@ function myFunction() {
 -->
 
 </section>
-<footer><p>schuyler.jackson@berkeley.edu  ethanhaik@ucla.edu</p></footer>
+<footer class=><p>schuyler.jackson@berkeley.edu  ethanhaik@ucla.edu</p></footer>
 	</body>
 </html>
 

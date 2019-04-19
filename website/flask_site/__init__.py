@@ -60,7 +60,7 @@ def create_app(test_config=None):
 		guess = get_random([0, 1])
 		guess_one = real_or_fake[guess]
 		guess_two = real_or_fake[1 - guess]
-		return render_template('testing2.html', real=guess_one, fake=guess_two)
+		return render_template('testing2.html', real=guess_one, fake=guess_two, guess=guess)
 	@app.route('/background_process_test')
 	def background_process_test():
 		print ("Hello")
@@ -82,7 +82,7 @@ def create_app(test_config=None):
 		guess = get_random([0, 1])
 		guess_one = real_or_fake[guess]
 		guess_two = real_or_fake[1 - guess]
-		return render_template('index.html', real=guess_one, fake=guess_two)
+		return render_template('index.html', real=guess_one, fake=guess_two, guess=guess)
 
 
 	return app
