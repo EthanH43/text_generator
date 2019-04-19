@@ -83,9 +83,10 @@ footer{
   }
   
   .timeline-TweetList-tweet {
-	  border-top: 1px solid rgba(15, 70, 100, 0.12);
+	border-top: 1px solid rgba(15, 70, 100, 0.12);
 	border: 2px solid rgb(214, 214, 215);
 	border-radius: 8px;
+	position: relative;
   }
   
   .timeline-TweetList-tweet2 {
@@ -100,22 +101,6 @@ footer{
   /*   border-top: none;
 	 */
 	 }
-
-	.ugi {
-		font: 10px Roboto;
-		font-weight: 300;
-		color: #292F33;
-		display: inline-block;
-		text-align: center;
-	}
-
-	.WRONG {
-		font: 20px Arial;
-		font-weight: 300;
-		color: rgb(119, 0, 0);
-
-
-	}
   
   .timeline-Tweet {
 	position: relative;
@@ -290,9 +275,3 @@ footer{
 	border-color: #00BFFF;
 }
 
-
-
-
-
-  
-  

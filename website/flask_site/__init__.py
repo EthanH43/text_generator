@@ -36,14 +36,14 @@ def create_app(test_config=None):
 		index = random.randint(0, length-1)
 		return lst[index]
 
-	@app.route('/')
+	@app.route('/spike')
 	def landing():
 		return render_template('landing_index.html')
 
 	@app.route('/hello')
 	def hello():
 		return 'Hello, World'
-	@app.route('/testing')
+	@app.route('/')
 	def testing():
 		# mod = model.Model()
 		# path= url_for('data', variable='model.data')
@@ -60,7 +60,12 @@ def create_app(test_config=None):
 		guess = get_random([0, 1])
 		guess_one = real_or_fake[guess]
 		guess_two = real_or_fake[1 - guess]
-		return render_template('testing2.html', real=guess_one, fake=guess_two)
+		# if guess is 0 than the 'real' will be real and fake will be fake, if its 1 than opposite
+		if guess == 1:
+			return render_template('main_2.html', real=guess_one, fake=guess_two)
+		else:
+			return render_template('main_1.html',real=guess_one, fake=guess_two)
+
 	@app.route('/background_process_test')
 	def background_process_test():
 		print ("Hello")
@@ -82,6 +87,7 @@ def create_app(test_config=None):
 		guess = get_random([0, 1])
 		guess_one = real_or_fake[guess]
 		guess_two = real_or_fake[1 - guess]
+<<<<<<< HEAD
 		return render_template('index.html', real=guess_one, fake=guess_two)
 	@app.route('/webdev/jackson')
 	def webdevjackson():
@@ -101,6 +107,9 @@ def create_app(test_config=None):
 		guess_one = real_or_fake[guess]
 		guess_two = real_or_fake[1 - guess]
 		return render_template('index.html', real=guess_one, fake=guess_two)
+=======
+		return render_template('index.html', real=guess_one, fake=guess_two, guess=guess)
+>>>>>>> 6e679aa7ed6e3c186a3ed2d783de7e8cec9b6a82
 
 
 	return app
