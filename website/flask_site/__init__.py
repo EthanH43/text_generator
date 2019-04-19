@@ -65,11 +65,29 @@ def create_app(test_config=None):
 	def background_process_test():
 		print ("Hello")
 		return "nothing"
-	@app.route('/webdev')
-	def webdev():
+	@app.route('/webdev/haik')
+	def webdevhaik():
 		# mod = model.Model()
 		# path= url_for('data', variable='model.data')
 		path = "/Users/Eis4Elephant/Documents/text_generator/website/flask_site/data/model.data"
+		with open(path, "rb") as file:
+			data = pickle.load(file)
+
+		# real = mod.get_tweet()
+		# fake = mod.get_fake()
+		real = get_random(data["original_tweets"])
+		fake = get_random(data["fake_tweets"])
+
+		real_or_fake = [real, fake]
+		guess = get_random([0, 1])
+		guess_one = real_or_fake[guess]
+		guess_two = real_or_fake[1 - guess]
+		return render_template('index.html', real=guess_one, fake=guess_two)
+	@app.route('/webdev/jackson')
+	def webdevjackson():
+		# mod = model.Model()
+		# path= url_for('data', variable='model.data')
+		path = "/Users/schuylerjackson/text_generator/website/flask_site/data/model.data"
 		with open(path, "rb") as file:
 			data = pickle.load(file)
 
