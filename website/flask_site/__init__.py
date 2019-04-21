@@ -36,17 +36,62 @@ def create_app(test_config=None):
 		index = random.randint(0, length-1)
 		return lst[index]
 
-	@app.route('/')
+	@app.route('/spike')
 	def landing():
 		return render_template('landing_index.html')
 
 	@app.route('/hello')
 	def hello():
 		return 'Hello, World'
-
-	@app.route('/webdev')
-	def webdev():
+	@app.route('/')
+	def testing():
 		# mod = model.Model()
+		# path= url_for('data', variable='model.data')
+		path = "/Users/schuylerjackson/text_generator/website/flask_site/data/model.data"
+		with open(path, "rb") as file:
+			data = pickle.load(file)
+
+		# real = mod.get_tweet()
+		# fake = mod.get_fake()
+		real = get_random(data["original_tweets"])
+		fake = get_random(data["fake_tweets"])
+
+		real_or_fake = [real, fake]
+		guess = get_random([0, 1])
+		guess_one = real_or_fake[guess]
+		guess_two = real_or_fake[1 - guess]
+		# if guess is 0 than the 'real' will be real and fake will be fake, if its 1 than opposite
+		if guess == 1:
+			return render_template('main_2.html', real=guess_one, fake=guess_two)
+		else:
+			return render_template('main_1.html',real=guess_one, fake=guess_two)
+
+	@app.route('/background_process_test')
+	def background_process_test():
+		print ("Hello")
+		return "nothing"
+	@app.route('/webdev/haik')
+	def webdevhaik():
+		# mod = model.Model()
+		# path= url_for('data', variable='model.data')
+		path = "/Users/Eis4Elephant/Documents/text_generator/website/flask_site/data/model.data"
+		with open(path, "rb") as file:
+			data = pickle.load(file)
+
+		# real = mod.get_tweet()
+		# fake = mod.get_fake()
+		real = get_random(data["original_tweets"])
+		fake = get_random(data["fake_tweets"])
+
+		real_or_fake = [real, fake]
+		guess = get_random([0, 1])
+		guess_one = real_or_fake[guess]
+		guess_two = real_or_fake[1 - guess]
+		return render_template('index.html', real=guess_one, fake=guess_two)
+	@app.route('/webdev/jackson')
+	def webdevjackson():
+		# mod = model.Model()
+		# path= url_for('data', variable='model.data')
 		path = "/Users/schuylerjackson/text_generator/website/flask_site/data/model.data"
 		with open(path, "rb") as file:
 			data = pickle.load(file)
@@ -61,7 +106,6 @@ def create_app(test_config=None):
 		guess_one = real_or_fake[guess]
 		guess_two = real_or_fake[1 - guess]
 		return render_template('index.html', real=guess_one, fake=guess_two)
-
 
 	return app
 
