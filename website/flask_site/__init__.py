@@ -87,7 +87,6 @@ def create_app(test_config=None):
 		guess = get_random([0, 1])
 		guess_one = real_or_fake[guess]
 		guess_two = real_or_fake[1 - guess]
-<<<<<<< HEAD
 		return render_template('index.html', real=guess_one, fake=guess_two)
 	@app.route('/webdev/jackson')
 	def webdevjackson():
@@ -107,9 +106,6 @@ def create_app(test_config=None):
 		guess_one = real_or_fake[guess]
 		guess_two = real_or_fake[1 - guess]
 		return render_template('index.html', real=guess_one, fake=guess_two)
-=======
-		return render_template('index.html', real=guess_one, fake=guess_two, guess=guess)
->>>>>>> 6e679aa7ed6e3c186a3ed2d783de7e8cec9b6a82
 
 
 	return app
