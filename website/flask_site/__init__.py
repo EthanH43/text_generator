@@ -47,7 +47,7 @@ def create_app(test_config=None):
 	def testing():
 		# mod = model.Model()
 		# path= url_for('data', variable='model.data')
-		path = "/Users/Eis4Elephant/Documents/text_generator/website/flask_site/data/model.data"
+		path = "/Users/schuylerjackson/text_generator/website/flask_site/data/model.data"
 		with open(path, "rb") as file:
 			data = pickle.load(file)
 
@@ -106,7 +106,10 @@ def create_app(test_config=None):
 		guess_one = real_or_fake[guess]
 		guess_two = real_or_fake[1 - guess]
 		return render_template('index.html', real=guess_one, fake=guess_two)
+<<<<<<< HEAD
 
+=======
+>>>>>>> e319472b298c8ae3ede61f8c10d8abed898b54f1
 
 	return app
 
