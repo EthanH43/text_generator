@@ -7,25 +7,24 @@
 	</head>
 
 	<body>
-		<!-- <h1>Welcome to the Trump Twitter Comparison Challenge!</h1>
-		<h2>This is a website designed to compare real tweets and computer generated tweets. 
-		<br>See if you can tell the difference.</h2>
-		<h4 id='date'></h4>	 -->
-		<link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles/test_styles.css') }}" />
 		<script async src="{{ url_for('static', filename='javascript/index.js') }}"></script>
     <meta charset="UTF-8">
-    <header>
+
+    <div id="header">
       <h1>Which tweet is real?</h1>
-    </header>
+    </div> <!-- header -->
 
-    <nav>
-    <button class="tablink" onclick="openPage('Trump', this, 'black')" id="defaultOpen">Trump</button>
-    <button class="tablink" onclick="openPage('Shakespeare', this, 'black')">Shakespeare</button>
-    <button class="tablink" onclick="openPage('Contact', this, 'black')">Contact</button>
-    <button class="tablink" onclick="openPage('About', this, 'black')">About</button>
-    </nav>
+    <div id="nav">
+      <button class="tablink" onclick="openPage('Trump', this, 'black')" id="defaultOpen">Trump</button>
+      <button class="tablink" onclick="openPage('Shakespeare', this, 'black')">Shakespeare</button>
+      <button class="tablink" onclick="openPage('Contact', this, 'black')">Contact</button>
+      <button class="tablink" onclick="openPage('About', this, 'black')">About</button>
+    </div> <!-- nav -->
 
-<section>
+
+
+<div id="section">
 
 <div id="Trump" class="tabcontent">
   <div class="wrapper"> 
@@ -213,8 +212,11 @@
       </p>
   </div> <!-- About-->
 
-</section>
-<footer><p>schuyler.jackson@berkeley.edu<br/>ethanhaik@ucla.edu</p></footer>
-	</body>
+  </div> <!-- section -->
+
+<div id="footer">
+  <p>schuyler.jackson@berkeley.edu ethanhaik@ucla.edu</p>
+</div> <!-- footer -->
+</body>
 </html>
 

@@ -62,7 +62,7 @@ def create_app(test_config=None):
 		guess_two = real_or_fake[1 - guess]
 		# if guess is 0 than the 'real' will be real and fake will be fake, if its 1 than opposite
 		if guess == 1:
-			return render_template('main_2.html', real=guess_one, fake=guess_two)
+			return render_template('main_2.html', real=guess_one, fake=guess_two) # main_2
 		else:
 			return render_template('main_1.html',real=guess_one, fake=guess_two)
 
