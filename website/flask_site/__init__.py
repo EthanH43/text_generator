@@ -45,14 +45,10 @@ def create_app(test_config=None):
 		return 'Hello, World'
 	@app.route('/')
 	def testing():
-		# mod = model.Model()
-		# path= url_for('data', variable='model.data')
 		path = "/Users/schuylerjackson/text_generator/website/flask_site/data/model.data"
 		with open(path, "rb") as file:
 			data = pickle.load(file)
 
-		# real = mod.get_tweet()
-		# fake = mod.get_fake()
 		real = get_random(data["original_tweets"])
 		fake = get_random(data["fake_tweets"])
 
@@ -66,20 +62,12 @@ def create_app(test_config=None):
 		else:
 			return render_template('main_1.html',real=guess_one, fake=guess_two)
 
-	@app.route('/background_process_test')
-	def background_process_test():
-		print ("Hello")
-		return "nothing"
-	@app.route('/webdev/haik')
+	@app.route('/haik')
 	def webdevhaik():
-		# mod = model.Model()
-		# path= url_for('data', variable='model.data')
 		path = "/Users/Eis4Elephant/Documents/text_generator/website/flask_site/data/model.data"
 		with open(path, "rb") as file:
 			data = pickle.load(file)
 
-		# real = mod.get_tweet()
-		# fake = mod.get_fake()
 		real = get_random(data["original_tweets"])
 		fake = get_random(data["fake_tweets"])
 
@@ -87,17 +75,18 @@ def create_app(test_config=None):
 		guess = get_random([0, 1])
 		guess_one = real_or_fake[guess]
 		guess_two = real_or_fake[1 - guess]
-		return render_template('index.html', real=guess_one, fake=guess_two)
-	@app.route('/webdev/jackson')
+		# if guess is 0 than the 'real' will be real and fake will be fake, if its 1 than opposite
+		if guess == 1:
+			return render_template('main_2.html', real=guess_one, fake=guess_two) # main_2
+		else:
+			return render_template('main_1.html',real=guess_one, fake=guess_two)
+
+	@app.route('/jackson')
 	def webdevjackson():
-		# mod = model.Model()
-		# path= url_for('data', variable='model.data')
 		path = "/Users/schuylerjackson/text_generator/website/flask_site/data/model.data"
 		with open(path, "rb") as file:
 			data = pickle.load(file)
 
-		# real = mod.get_tweet()
-		# fake = mod.get_fake()
 		real = get_random(data["original_tweets"])
 		fake = get_random(data["fake_tweets"])
 
@@ -105,7 +94,17 @@ def create_app(test_config=None):
 		guess = get_random([0, 1])
 		guess_one = real_or_fake[guess]
 		guess_two = real_or_fake[1 - guess]
-		return render_template('index.html', real=guess_one, fake=guess_two)
+		# if guess is 0 than the 'real' will be real and fake will be fake, if its 1 than opposite
+		if guess == 1:
+			return render_template('main_2.html', real=guess_one, fake=guess_two) # main_2
+		else:
+			return render_template('main_1.html',real=guess_one, fake=guess_two)
+		
+	@app.route('/background_process_test')
+	def background_process_test():
+		print ("Hello")
+		return "nothing"
+	
 
 	return app
 
