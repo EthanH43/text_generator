@@ -42,6 +42,9 @@
           $("#image").fadeIn(1000)
           setTimeout(location.reload.bind(location), 1500);
           });
+      function myFunction3() {
+        document.getElementById("Title").innerHTML="Which Shakespeare is real?"; 
+      }
 
       }
     </script>
@@ -53,12 +56,12 @@
     <meta charset="UTF-8">
 
     <div id="header">
-        <h1>Which tweet is real?</h1>
+        <h1 id="Title">Which tweet is real?</h1>
     </div> <!-- header -->
 
     <div id="nav">
       <button class="tablink" onclick="openPage('Trump', this, 'black')" id="defaultOpen">Trump</button>
-      <button class="tablink" onclick="openPage('Shakespeare', this, 'black')">Shakespeare</button>
+      <button class="tablink" onclick="openPage('Shakespeare', this, 'black'); myFunction3()">Shakespeare</button>
       <button class="tablink" onclick="openPage('Contact', this, 'black')">Contact</button>
       <button class="tablink" onclick="openPage('About', this, 'black')">About</button>
     </div> <!-- navigation -->
