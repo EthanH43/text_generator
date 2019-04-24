@@ -45,7 +45,7 @@ def create_app(test_config=None):
 		return 'Hello, World'
 	@app.route('/')
 	def testing():
-		path = "/Users/Eis4Elephant/Documents/text_generator/website/flask_site/data/model.data"
+		path = "/Users/schuylerjackson/text_generator/website/flask_site/data/model.data"
 		with open(path, "rb") as file:
 			data = pickle.load(file)
 
