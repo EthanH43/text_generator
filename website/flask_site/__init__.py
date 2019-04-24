@@ -52,15 +52,23 @@ def create_app(test_config=None):
 		real = get_random(data["original_tweets"])
 		fake = get_random(data["fake_tweets"])
 
+		real_shake = get_random(data["real_shake"])
+		fake_shake = get_random(data["fake_shake"])
+
 		real_or_fake = [real, fake]
 		guess = get_random([0, 1])
 		guess_one = real_or_fake[guess]
 		guess_two = real_or_fake[1 - guess]
+
+		shake_real_or_fake = [real_shake, fake_shake]
+		shake_guess_one = shake_real_or_fake[guess]
+		shake_guess_two = shake_real_or_fake[1 - guess]
+
 		# if guess is 0 than the 'real' will be real and fake will be fake, if its 1 than opposite
 		if guess == 1:
-			return render_template('main_2.html', real=guess_one, fake=guess_two) # main_2
+			return render_template('main_2.html', real=guess_one, fake=guess_two, real_shake=shake_guess_one, fake_shake=shake_guess_two) # main_2
 		else:
-			return render_template('main_1.html',real=guess_one, fake=guess_two)
+			return render_template('main_1.html',real=guess_one, fake=guess_two, real_shake=shake_guess_one, fake_shake=shake_guess_two)
 
 	@app.route('/haik')
 	def webdevhaik():
