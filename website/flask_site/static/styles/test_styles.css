@@ -13,6 +13,14 @@ body, html{
 	height:100%;
 	width:100%;
 }
+.aboutimagewrap{
+	display: flex;
+}
+.aboutimage {
+	float: left;
+  width: 50%;
+  padding: 5px;
+}
 #S{
 	color: #292F33;
 }

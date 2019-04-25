@@ -235,9 +235,44 @@
         </div> <!-- wrapper -->
       </div> <!-- Shakespeare -->
 
-      <div id="Contact" class="tabcontent" style="color:black">Whatup</div> <!-- Contact-->
       <div id="About" class="tabcontent">
+        <div class="aboutimagewrap">
+          <div class="aboutimage">
+            <image id="Ethan" src={{ url_for("static", filename="0.jpeg" ) }} style="width:260px;height:260px;">
+            <h3>Ethan Haik</h3>
+          </div>
+          <div class="aboutimage">
+            <image id="Spike" src={{ url_for("static", filename="IMG_0376 2.jpeg" ) }} style="width:200px;height:260px;">
+            <h3>Schuyler Jackson</h3>
+          </div>
+        </div>
         <p>
+              Hey, welcome to our website. We built this to showcase our final project for Google's Applied Machine Learning Intensive (AMLI).
+              Using cutting edge language modeling techniques we generate fake tweets and Shakespeare and ask you the user, Which one is real?
+        </p>
+        <p>
+            Producing fake tweets is nothing new, in our research we came across many examples, one particularly good example was 
+            <a href="https://twitter.com/DeepDrumpf?lang=en">DeepDrumpf</a>
+            created by @BradHayes. Most of the model structures were some variation of LSTM node Recurrent Neural Networks, but we hadn't 
+            seen any use of the gpt-2 model to generate tweets. We thought this might be due to it's relatively new release and we were happy
+            to integrate what <a href="https://openai.com/blog/better-language-models/">Open ai's</a> 
+            has done so well into our application.
+        </p>
+        <p>
+              In February 2019 the ML community saw a great advance in language modeling with Openai's 
+              release of their gpt-2 117M model. They have kept the model used in the paper out of the public sphere, but the smaller 
+              model still produces some convincing results. We want to know what this means for the future of information?
+        </p>
+      </div> <!-- About-->
+    </div> <!-- section -->
+
+    <div id="footer">
+      <p>ethanhaik@ucla.edu || schuyler.jackson@berkeley.edu</p>
+    </div> <!-- footer -->
+	</body>
+</html>
+
+        <!-- <p>
               Hey, welcome to our website. We built this to showcase our final project for Google's Applied Machine Learning Intensive (AMLI).
               Our project idea was to develop a website that would display real tweets next to fake ones and ask the user to guess the real one.
               We wanted to use machine learning to generate the text, and our first idea was to use a LSTM based neural network. Our results were
@@ -261,13 +296,5 @@
               impressive, his work was our original performance benchmark. All the examples we came across were utilizing a neural net with LSTM
               or GRU nodes. We believe this to be the first application fo GPT-2 117M to the tweet generation problem. Of course this is a cute
               application of some powerful technology, but we believe it to be an eye opening experiment with the possibilities of misinformation.
-        </p>
-      </div> <!-- About-->
-    </div> <!-- section -->
-
-    <div id="footer">
-      <p>ethanhaik@ucla.edu || schuyler.jackson@berkeley.edu</p>
-    </div> <!-- footer -->
-	</body>
-</html>
+        </p> -->
 
