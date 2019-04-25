@@ -1,9 +1,19 @@
 
 
   // Get the element with id="defaultOpen" and click on it
-  document.getElementById("defaultOpen").click();
+  // document.getElementById("defaultOpen").click();
+  // window.onload=console.log("The page has been loaded!")
+    if(location.hash == "#reload_shake")
+    {
+      document.getElementById("shakespeare_tab").click();
+  
+    }
+    else {
+      document.getElementById("defaultOpen").click();
 
-document.getElementById('date').innerHTML = new Date().toDateString();
+    }
+  // window.onload(LoadShakespear())
+
 
 function openPage(pageName, elmnt, color) {
     // Hide all elements with class="tabcontent" by default */

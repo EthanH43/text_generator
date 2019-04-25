@@ -4,10 +4,13 @@
     <title>My Webpage</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-      function myFunction() { 
-          
+      function LeftButton() { 
+          // var height= document.getElementById("timeline-TweetList-tweet").offsetHeight 
+          // var width= document.getElementById("timeline-TweetList-tweet").offsetWidth
+          // height = height - 0.1*height
+          // width= width - 0.1*width
           document.getElementById("timeline-Tweet").style="display:none"; 
-          document.getElementById("image").style="height:200px; width: 280px; display: none;  margin-left: 60px; margin-top: 10px ";  
+          document.getElementById("image").style="height:200px; width: 280px; display: none;  margin-left: 60px; margin-top: 10px;  ";  
 
           // document.getElementById("ugi").style="position: absolute;  display:inline-block; font: 20px Roboto;font-weight: 300;color: #292F33; text-align: center;"; 
           document.getElementById("button-section").style="opacity:0"; 
@@ -17,36 +20,83 @@
           $(document).ready(function(){
         
           $("#image").fadeIn(1000)
-          setTimeout(location.reload.bind(location), 1500);
-        });
+          window.location.hash = 'reload_trump';
+
+          });
+          setTimeout(function () {document.location.reload()}, 1500);
 
       }
-      function myFunction2() { 
-          var height2= document.getElementById("timeline-TweetList-tweet2").offsetHeight 
-          var width2= document.getElementById("timeline-TweetList-tweet2").offsetWidth
-          height2 = height2 - 0.1*height2
-          width2= width2 - 0.1*width2
+      
+      function RightButton() { 
+          // var height2= document.getElementById("timeline-TweetList-tweet2").offsetHeight 
+          // var width2= document.getElementById("timeline-TweetList-tweet2").offsetWidth
+          // height2 = height2 - 0.1*height2
+          // width2= width2 - 0.1*width2
           document.getElementById("timeline-Tweet2").style="display:none"; 
           document.getElementById("image_real").style="height:206px; width: 263px; display: none;  margin-left: 90px; ";  
 
-          document.getElementById("button-section2").style="opacity:0"; 
+          document.getElementById("sbutton-section2").style="opacity:0"; 
 
 
           $(document).ready(function(){
 
           $("#image_real").fadeIn(1000)
-          setTimeout(location.reload.bind(location), 1500);
+
           });
+          setTimeout(function () {document.location.reload()}, 1500);
+
       }
+      
+      </script>
+      <script>
+        function ShakespeareLeftButton() {
+          document.getElementById("stimeline-Tweet-text").style="display:none"; 
+          document.getElementById("s-image").style="display: none; height:200px; width: 280px;  margin-left: 60px; margin-top: 10px; background-color: wheat; ";  
+          document.getElementById("sbutton-section").style="opacity:0"; 
+
+          $(document).ready(function(){
+          
+          $("#s-image").fadeIn(1000)
+          });
+            setTimeout(function () {document.location.reload()}, 1500);
+          // document.onload= getElementById("shakespeare_tab").click();
+    }
+
+      function ShakespeareRightButton() {
+        document.getElementById("stimeline-Tweet-text2").style="display:none"; 
+        document.getElementById("s-image_real").style="display: none; height:200px; width: 280px;  margin-left: 60px; margin-top: 10px ";  
+        document.getElementById("sbutton-section2").style="opacity:0"; 
+
+        $(document).ready(function(){
+        
+        $("#s-image_real").fadeIn(1000)
+        });
+          setTimeout(function () {document.location.reload()}, 1500);
+        // document.onload= getElementById("shakespeare_tab").click();
+    }
+  
+    
+
+  // document.getElementById("ugi").style="position: absolute;  display:inline-block; font: 20px Roboto;font-weight: 300;color: #292F33; text-align: center;"; 
+  // document.getElementById("newtext").style="position: absolute; width:" + width +"; height:" + height +';'; 
+
+
+
+      
 
     </script>
       <script>
-      function myFunction3() {
+      function ShakespeareTab() {
         document.getElementById("Title").innerHTML="Which Shakespeare is real?"; 
+        window.location.hash = 'reload_shake';
+
       }
       function TrumpTab() {
         document.getElementById("Title").innerHTML="Which tweet is real?"; 
+        window.location.hash = 'reload_trump';
+
       }
+     
     </script>
 
       
@@ -63,9 +113,9 @@
 
     <div id="nav">
       <button class="tablink" onclick="openPage('Trump', this, 'black'); TrumpTab()" id="defaultOpen">Trump</button>
-      <button class="tablink" onclick="openPage('Shakespeare', this, 'black'); myFunction3()">Shakespeare</button>
+      <button class="tablink" id="shakespeare_tab" onclick="openPage('Shakespeare', this, 'black'); ShakespeareTab()">Shakespeare</button>
       <!-- <button class="tablink" onclick="openPage('Contact', this, 'black')">Contact</button> -->
-      <button class="tablink" onclick="openPage('About', this, 'black')">About</button>
+      <button class="tablink" onclick="openPage('About', this, 'black'); ">About</button>
     </div>  <!-- nav -->
 
     <div id="section">
@@ -105,7 +155,7 @@
             </div> <!-- timeline-tweetlist-tweet -->
           </div> <!-- tw-block-parent -->
           <div class="button-section" id="button-section">
-              <button onclick="myFunction()" class="button" type="button">Real</button>
+              <button onclick="LeftButton()" class="button" type="button">Real</button>
           </div> <!-- button-section -->
         </div> <!-- wrapper -->
         <!-- Right text box. -->
@@ -143,7 +193,7 @@
             </div> <!-- timeline-tweetlist-tweet -->
           </div> <!-- tw-block-parent -->
           <div class="button-section" id="button-section2">
-            <button onclick="myFunction2()" class="button" type="button">Real</button>
+            <button onclick="RightButton()" class="button" type="button">Real</button>
           </div> <!-- button-section -->
         </div> <!-- wrapper -->
       </div> <!-- Trump -->
@@ -153,28 +203,34 @@
         <!-- Left text box. -->
         <div class="wrapper"> 
           <div class="tw-block-parent">
-            <div class="stimeline-TweetList-tweet">
-              <div  class="stimeline-Tweet-text">
+            <div class="stimeline-TweetList-tweet" id="stimeline-TweetList-tweet">
+                <img style="display: none" class= "image" id="s-image" src={{ url_for("static", filename="robot_stare_2.png" )}}
+                alt="Fake">
+              <div  class="stimeline-Tweet-text" id= "stimeline-Tweet-text">
                 <pre style="white-space: pre-wrap; word-break: keep-all;">{{ real_shake }}</pre>
               </div> <!-- tweet text -->
             </div> <!-- timeline-tweetlist-tweet -->
           </div> <!-- tw-block-parent -->
-          <div class="button-section">
-            <button onclick="location.href='http://www.google.com'" class="sbutton" type="button">Real</button>
+          <div class="button-section" id="sbutton-section">
+            <button onclick="ShakespeareLeftButton()" class="sbutton" type="button">Real</button>
           </div> <!-- button-section -->
         </div> <!-- wrapper -->
       
         <!-- Right text box. -->
         <div class="wrapper">
-          <div class="tw-block-parent">
-            <div class="stimeline-TweetList-tweet2">
-              <div  class="stimeline-Tweet-text">
+          <div class="tw-block-parent" id="stw-block-parent">
+              
+            <div class="stimeline-TweetList-tweet2" id="stimeline-TweetList-tweet2">
+                <img style="display: none" class= "image_real" id="s-image_real" src={{ url_for("static", filename="Shakespeare-Smiles-Wink-Headshot.png" )}}
+                alt="Real">
+              <div  class="stimeline-Tweet-text" id="stimeline-Tweet-text2">
+                  
                   <pre style="white-space: pre-wrap; word-break: keep-all;">{{ fake_shake }}</pre>
               </div> <!-- tweet text -->
             </div> <!-- timeline-tweetlist-tweet -->
           </div> <!-- tw-block-parent -->
-          <div class="button-section">
-            <button onclick="location.href='http://www.google.com'" class="sbutton" type="button">Real</button>
+          <div class="button-section" id="sbutton-section2">
+            <button onclick="ShakespeareRightButton()" class="sbutton" type="button">Real</button>
           </div> <!-- button-section -->
         </div> <!-- wrapper -->
       </div> <!-- Shakespeare -->
