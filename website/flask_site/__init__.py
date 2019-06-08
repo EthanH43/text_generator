@@ -7,7 +7,7 @@ import pickle
 
 def create_app(test_config=None):
 	"""Create and configure the app.
-	
+
 	Parameters
 	----------
 		test_config - Defaults to None, but can be used to set
@@ -18,7 +18,7 @@ def create_app(test_config=None):
 	"""
 
 	app = Flask(__name__, instance_relative_config=True)
-	
+
 	app.config.from_mapping(
 		SECRET_KEY='dev'
 		)
@@ -31,7 +31,7 @@ def create_app(test_config=None):
 
 	def get_random(lst):
 		"""Returns a random element of the list."""
-		
+
 		length = len(lst)
 		index = random.randint(0, length-1)
 		return lst[index]
@@ -45,7 +45,7 @@ def create_app(test_config=None):
 		return 'Hello, World'
 	@app.route('/')
 	def testing():
-		path = "/Users/Eis4Elephant/Documents/text_generator/website/flask_site/data/model.data"
+		path = "/Users/schuylerjackson/text_generator/website/flask_site/data/model.data"
 		with open(path, "rb") as file:
 			data = pickle.load(file)
 
@@ -107,16 +107,22 @@ def create_app(test_config=None):
 			return render_template('main_2.html', real=guess_one, fake=guess_two) # main_2
 		else:
 			return render_template('main_1.html',real=guess_one, fake=guess_two)
-		
+
 	@app.route('/background_process_test')
 	def background_process_test():
 		print ("Hello")
 		return "nothing"
-	
+
+	def main(app):
+	    try:
+	        WSGIServer(app, bindAddress='./hello-world.sock', umask=0000).run()
+	    except (KeyboardInterrupt, SystemExit, SystemError):
+	        logging.info("Shutdown requested...exiting")
+	    except Exception:
+	        traceback.print_exc(file=sys.stdout)
+
+
+	if __name__ == '__main__':
+		main(app)
 
 	return app
-
-
-
-
-
