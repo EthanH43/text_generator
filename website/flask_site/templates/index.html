@@ -1,0 +1,222 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Webpage</title>
+	</head>
+
+	<body>
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles/test_styles.css') }}" />
+		<script async src="{{ url_for('static', filename='javascript/index.js') }}"></script>
+    <meta charset="UTF-8">
+
+    <div id="header">
+      <h1>Which tweet is real?</h1>
+    </div> <!-- header -->
+
+    <div id="nav">
+      <button class="tablink" onclick="openPage('Trump', this, 'black')" id="defaultOpen">Trump</button>
+      <button class="tablink" onclick="openPage('Shakespeare', this, 'black')">Shakespeare</button>
+      <button class="tablink" onclick="openPage('Contact', this, 'black')">Contact</button>
+      <button class="tablink" onclick="openPage('About', this, 'black')">About</button>
+    </div> <!-- nav -->
+
+
+
+<div id="section">
+
+<div id="Trump" class="tabcontent">
+  <div class="wrapper"> 
+  <div class="tw-block-parent">
+    <div class="timeline-TweetList-tweet">
+      <div class="timeline-Tweet">
+        <div class="timeline-Tweet-brand">
+          <div class="Icon Icon--twitter"></div>
+        </div> <!-- brand -->
+        <div class="timeline-Tweet-author">
+          <div class="TweetAuthor">
+              <a class="TweetAuthor-link" href="#channel"> </a>
+              <span class="TweetAuthor-avatar"> 
+                  <div class="Avatar"></div>
+              </span>
+              <span class="TweetAuthor-name">Donald J. Trump </span>
+              <span class="Icon Icon--verified"> </span>
+              <span class="TweetAuthor-screenName">@realDonaldTrump </span>
+            </div> <!-- tweet author -->
+        </div> <!-- timeline-tweet-author -->
+        <div  class="timeline-Tweet-text">
+          {{ fake }}
+        </div> <!-- tweet text -->
+        <div class="timeline-Tweet-metadata">  
+          <span class="timeline-Tweet-timestamp">9h</span>
+        </div> <!--timeline-tweet-metadata -->
+        <ul class="timeline-Tweet-actions">
+          <li class="timeline-Tweet-action"><a class="Icon Icon--heart" href="#"></a></li>
+          <li class="timeline-Tweet-action"><a class="Icon Icon--share" href="#"></a></li>
+        </ul> <!-- timeline-tweet-actions -->
+      </div> <!-- timeline-tweet -->
+    </div> <!-- timeline-tweetlist-tweet -->
+    
+  </div> <!-- tw-block-parent -->
+  <div class="button-section">
+          <button onclick="location.href='http://www.google.com'" class="button" type="button">Real</button>
+        </div> <!-- button-section -->
+  </div> <!-- wrapper -->
+
+
+  <div class="wrapper">
+
+  <div class="tw-block-parent">
+    <div class="timeline-TweetList-tweet2">
+      <div class="timeline-Tweet">
+        <div class="timeline-Tweet-brand">
+          <div class="Icon Icon--twitter"></div>
+        </div> <!-- brand -->
+        <div class="timeline-Tweet-author">
+          <div class="TweetAuthor">
+              <a class="TweetAuthor-link" href="#channel"> </a>
+              <span class="TweetAuthor-avatar"> 
+                  <div class="Avatar"></div>
+              </span>
+              <span class="TweetAuthor-name">Donald J. Trump </span>
+              <span class="Icon Icon--verified"> </span>
+              <span class="TweetAuthor-screenName">@realDonaldTrump </span>
+            </div> <!-- tweet author -->
+        </div> <!-- timeline-tweet-author -->
+        <div  class="timeline-Tweet-text">
+          {{ real }}
+            </div> <!-- tweet text -->
+        <div class="timeline-Tweet-metadata">  
+          <span class="timeline-Tweet-timestamp">9h</span>
+        </div> <!--timeline-tweet-metadata -->
+        <ul class="timeline-Tweet-actions">
+          <li class="timeline-Tweet-action"><a class="Icon Icon--heart" href="#"></a></li>
+          <li class="timeline-Tweet-action"><a class="Icon Icon--share" href="#"></a></li>
+        </ul> <!-- timeline-tweet-actions -->
+      </div> <!-- timeline-tweet -->
+    </div> <!-- timeline-tweetlist-tweet -->
+  </div> <!-- tw-block-parent -->
+  <div class="button-section">
+          <button onclick="location.href='http://www.google.com'" class="button" type="button">Real</button>
+        </div> <!-- button-section -->
+
+  </div> <!-- wrapper -->
+</div> <!-- Trump -->
+
+
+<div id="Shakespeare" class="tabcontent">
+    <div class="wrapper"> 
+    <div class="tw-block-parent">
+      <div class="timeline-TweetList-tweet">
+        <div class="timeline-Tweet">
+          <div class="timeline-Tweet-brand">
+            <div class="Icon Icon--twitter"></div>
+          </div> <!-- brand -->
+          <div class="timeline-Tweet-author">
+            <div class="TweetAuthor">
+                <a class="TweetAuthor-link" href="#channel"> </a>
+                <span class="TweetAuthor-avatar"> 
+                    <div class="Avatar"></div>
+                </span>
+                <span class="TweetAuthor-name">William Shakespeare </span>
+                <span class="Icon Icon--verified"> </span>
+                <span class="TweetAuthor-screenName">@realWShake </span>
+              </div> <!-- tweet author -->
+          </div> <!-- timeline-tweet-author -->
+          <div  class="timeline-Tweet-text">
+            {{ fake }}
+          </div> <!-- tweet text -->
+          <div class="timeline-Tweet-metadata">  
+            <span class="timeline-Tweet-timestamp">9h</span>
+          </div> <!--timeline-tweet-metadata -->
+          <ul class="timeline-Tweet-actions">
+            <li class="timeline-Tweet-action"><a class="Icon Icon--heart" href="#"></a></li>
+            <li class="timeline-Tweet-action"><a class="Icon Icon--share" href="#"></a></li>
+          </ul> <!-- timeline-tweet-actions -->
+        </div> <!-- timeline-tweet -->
+      </div> <!-- timeline-tweetlist-tweet -->
+      
+    </div> <!-- tw-block-parent -->
+    <div class="button-section">
+            <button onclick="location.href='http://www.google.com'" class="button" type="button">Real</button>
+          </div> <!-- button-section -->
+    </div> <!-- wrapper -->
+  
+  
+    <div class="wrapper">
+  
+    <div class="tw-block-parent">
+      <div class="timeline-TweetList-tweet2">
+        <div class="timeline-Tweet">
+          <div class="timeline-Tweet-brand">
+            <div class="Icon Icon--twitter"></div>
+          </div> <!-- brand -->
+          <div class="timeline-Tweet-author">
+            <div class="TweetAuthor">
+                <a class="TweetAuthor-link" href="#channel"> </a>
+                <span class="TweetAuthor-avatar"> 
+                    <div class="Avatar"></div>
+                </span>
+                <span class="TweetAuthor-name">William Shakespeare </span>
+                <span class="Icon Icon--verified"> </span>
+                <span class="TweetAuthor-screenName">@realWShake </span>
+              </div> <!-- tweet author -->
+          </div> <!-- timeline-tweet-author -->
+          <div  class="timeline-Tweet-text">
+            {{ real }}
+              </div> <!-- tweet text -->
+          <div class="timeline-Tweet-metadata">  
+            <span class="timeline-Tweet-timestamp">9h</span>
+          </div> <!--timeline-tweet-metadata -->
+          <ul class="timeline-Tweet-actions">
+            <li class="timeline-Tweet-action"><a class="Icon Icon--heart" href="#"></a></li>
+            <li class="timeline-Tweet-action"><a class="Icon Icon--share" href="#"></a></li>
+          </ul> <!-- timeline-tweet-actions -->
+        </div> <!-- timeline-tweet -->
+      </div> <!-- timeline-tweetlist-tweet -->
+    </div> <!-- tw-block-parent -->
+    <div class="button-section">
+            <button onclick="location.href='http://www.google.com'" class="button" type="button">Real</button>
+          </div> <!-- button-section -->
+  
+    </div> <!-- wrapper -->
+  </div> <!-- Shakespeare -->
+
+  <div id="Contact" class="tabcontent">Whatup</div> <!-- Contact-->
+  <div id="About" class="tabcontent">
+      <p>
+        Hey, welcome to our website. We built this to showcase our final project for Google's Applied Machine Learning Intensive (AMLI).
+        Our project idea was to develop a website that would display real tweets next to fake ones and ask the user to guess the real one.
+        We wanted to use machine learning to generate the text, and our first idea was to use a LSTM based neural network. Our results were
+        mixed. We tried word level and character level modeling, but both produced subpar results. We were struggling with the development 
+        of our own models, so we looked to see if we were reinventing the wheel, we where!
+      </p>
+      <p>
+        In February 2019 the ML community saw a great advance in language modeling with 
+        <a href="https://openai.com/blog/better-language-models/">Open ai's</a> 
+        release of their gpt-2 117M model.Although this isn't the full model they used in their paper, the results are still 
+        impressive. Thanks to
+        <a href="https://github.com/nshepperd/gpt-2/tree/finetuning">nsheppered's</a> 
+        addtions to the original git repository, we are were able to train this state of the art model on our twitter data,
+        producing some convincing fake tweets.
+      </p>
+      <p>
+        Producing fake tweets is nothing new, in our research we came across many examples, but the only one that really stuck out to us
+        was 
+        <a href="https://twitter.com/DeepDrumpf?lang=en">DeepDrumpf</a>
+        created by @BradHayes. We were unable to speak with Mr. Hayes, so we don't know what he uses, but his results are 
+        impressive, his work was our original performance benchmark. All the examples we came across were utilizing a neural net with LSTM 
+        or GRU nodes. We believe this to be the first application fo GPT-2 117M to the tweet generation problem. Of course this is a cute 
+        application of some powerful technology, but we believe it to be an eye opening experiment with the possibilities of misinformation.
+      </p>
+  </div> <!-- About-->
+
+  </div> <!-- section -->
+
+<div id="footer">
+  <p>schuyler.jackson@berkeley.edu ethanhaik@ucla.edu</p>
+</div> <!-- footer -->
+</body>
+</html>
+

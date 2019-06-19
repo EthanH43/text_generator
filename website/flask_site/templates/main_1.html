@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+    <title>Which one is real?</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+	<body>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script>
+        function LeftButton() { 
+            // var height= document.getElementById("timeline-TweetList-tweet").offsetHeight 
+            // var width= document.getElementById("timeline-TweetList-tweet").offsetWidth
+            // height = height - 0.1*height
+            // width= width - 0.1*width
+            document.getElementById("timeline-Tweet").style="display:none"; 
+            document.getElementById("image_real").style="height:206px; width: 263px; display: none;  margin-left: 90px; ";  
+  
+            // document.getElementById("ugi").style="position: absolute;  display:inline-block; font: 20px Roboto;font-weight: 300;color: #292F33; text-align: center;"; 
+            document.getElementById("button-section").style="opacity:0"; 
+            // document.getElementById("newtext").style="position: absolute; width:" + width +"; height:" + height +';'; 
+  
+  
+            $(document).ready(function(){
+          
+            $("#image_real").fadeIn(1000)
+            window.location.hash = 'reload_trump';
+
+          });
+          setTimeout(function () {document.location.reload()}, 1500);
+  
+        }
+        function RightButton() { 
+            // var height2= document.getElementById("timeline-TweetList-tweet2").offsetHeight 
+            // var width2= document.getElementById("timeline-TweetList-tweet2").offsetWidth
+            // height2 = height2 - 0.1*height2
+            // width2= width2 - 0.1*width2
+            document.getElementById("timeline-Tweet2").style="display:none"; 
+            document.getElementById("image").style="height:200px; width: 280px; display: none;  margin-left: 60px;  margin-top: 10px; background-color: wheat;";  
+  
+            document.getElementById("button-section2").style="opacity:0"; 
+  
+  
+            $(document).ready(function(){
+  
+            $("#image").fadeIn(1000)
+
+});
+            setTimeout(function () {document.location.reload()}, 1500);
+        
+        }
+        </script>
+        <script>
+        function Shakespeare_tab() {
+          document.getElementById("Title").innerHTML="Which Shakespeare is real?"; 
+          window.location.hash = 'reload_shake';
+
+        }
+        function TrumpTab() {
+          document.getElementById("Title").innerHTML="Which tweet is real?"; 
+          window.location.hash = 'reload_trump';
+
+        }
+        
+      </script>
+      <script>
+      function ShakespeareLeftButton() {
+          document.getElementById("stimeline-Tweet-text").style="display:none"; 
+          document.getElementById("s-image_real").style="display: none; height:200px; width: 280px;  margin-left: 60px; margin-top: 10px ";  
+          document.getElementById("sbutton-section").style="opacity:0"; 
+
+          $(document).ready(function(){
+          
+          $("#s-image_real").fadeIn(1000)
+          });
+            setTimeout(function () {document.location.reload()}, 1500);
+          // document.onload= getElementById("shakespeare_tab").click();
+    }
+
+
+      function ShakespeareRightButton() {
+          document.getElementById("stimeline-Tweet-text2").style="display:none"; 
+          document.getElementById("s-image").style="display: none; height:200px; width: 280px;   margin-left: 60px; margin-top: 10px; background-color: wheat; ";  
+          document.getElementById("sbutton-section2").style="opacity:0"; 
+
+          $(document).ready(function(){
+        
+          $("#s-image").fadeIn(1000)
+          // setTimeout(location.reload.bind(location), 1500);
+        });
+          setTimeout(function () {document.location.reload()}, 1500);
+
+        
+        
+     
+      }
+    
+      </script>
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles/test_styles.css') }}" />
+		<script async src="{{ url_for('static', filename='javascript/index.js') }}"></script>
+    <meta charset="UTF-8">
+
+    <div id="header">
+        <h1 id="Title">Which tweet is real?</h1>
+    </div> <!-- header -->
+
+    <div id="nav">
+      <button class="tablink" onclick="openPage('Trump', this, 'black'); TrumpTab()" id="defaultOpen">Trump</button>
+      <button class="tablink" id="shakespeare_tab" onclick="openPage('Shakespeare', this, 'black'); Shakespeare_tab()">Shakespeare</button>
+      <!-- <button class="tablink" onclick="openPage('Contact', this, 'black')">Contact</button> -->
+      <button class="tablink" onclick="openPage('About', this, 'black')">About</button>
+    </div> <!-- navigation -->
+
+
+    <div id="section">
+
+      <div id="Trump" class="tabcontent">
+        <div class="wrapper" id="wrapper"> 
+          <div class="tw-block-parent" id=tw-block-parent>
+            <div class="timeline-TweetList-tweet" id="timeline-TweetList-tweet">
+              <img style="display: none" class= "image_real" id="image_real" src={{ url_for("static", filename="Trump_stare.png" )}}
+                    alt="Real">
+              <div class="timeline-Tweet" id="timeline-Tweet">
+                <div class="timeline-Tweet-brand">
+                  <div class="Icon Icon--twitter"></div>
+                </div> <!-- brand -->
+                <div class="timeline-Tweet-author">
+                  <div class="TweetAuthor">
+                      <a class="TweetAuthor-link" href="#channel"> </a>
+                      <span class="TweetAuthor-avatar"> 
+                        <div class="Avatar"></div>
+                      </span>
+                      <span class="TweetAuthor-name">Donald J. Trump </span>
+                      <span class="Icon Icon--verified"> </span>
+                      <span class="TweetAuthor-screenName">@realDonaldTrump </span>
+                  </div> <!-- tweet author -->
+                </div> <!-- timeline-tweet-author -->
+                <div  class="timeline-Tweet-text">
+                  {{ real }}
+                </div> <!-- tweet text -->
+                <div class="timeline-Tweet-metadata">  
+                  <span class="timeline-Tweet-timestamp">9h</span>
+                </div> <!--timeline-tweet-metadata -->
+                <ul class="timeline-Tweet-actions">
+                  <li class="timeline-Tweet-action"><a class="Icon Icon--heart" href="#"></a></li>
+                  <li class="timeline-Tweet-action"><a class="Icon Icon--share" href="#"></a></li>
+                </ul> <!-- timeline-tweet-actions -->
+              </div> <!-- timeline-tweet -->
+            </div> <!-- timeline-tweetlist-tweet -->
+          </div> <!-- tw-block-parent -->
+          <div class="button-section" id="button-section">
+            <button onclick="LeftButton()" class="button" type="button">Real</button>
+          </div> <!-- button-section -->
+        </div> <!-- wrapper -->
+
+        <div class="wrapper">
+          <div class="tw-block-parent">
+            <div class="timeline-TweetList-tweet2" id="timeline-TweetList-tweet2">
+              <img style="display: none" class= "image" id="image" src={{ url_for("static", filename="robot_stare.jpg" )}}
+              alt="Fake">     
+              <div class="timeline-Tweet" id="timeline-Tweet2">
+                <div class="timeline-Tweet-brand">
+                  <div class="Icon Icon--twitter"></div>
+                </div> <!-- brand -->
+                <div class="timeline-Tweet-author">
+                  <div class="TweetAuthor">
+                    <a class="TweetAuthor-link" href="#channel"> </a>
+                    <span class="TweetAuthor-avatar"> 
+                        <div class="Avatar"></div>
+                    </span>
+                    <span class="TweetAuthor-name">Donald J. Trump </span>
+                    <span class="Icon Icon--verified"> </span>
+                    <span class="TweetAuthor-screenName">@realDonaldTrump </span>
+                  </div> <!-- tweet author -->
+                </div> <!-- timeline-tweet-author -->
+                <div  class="timeline-Tweet-text">
+                  {{ fake }}
+                </div> <!-- tweet text -->
+                <div class="timeline-Tweet-metadata">  
+                  <span class="timeline-Tweet-timestamp">9h</span>
+                </div> <!--timeline-tweet-metadata -->
+                <ul class="timeline-Tweet-actions">
+                  <li class="timeline-Tweet-action"><a class="Icon Icon--heart" href="#"></a></li>
+                  <li class="timeline-Tweet-action"><a class="Icon Icon--share" href="#"></a></li>
+                </ul> <!-- timeline-tweet-actions -->
+              </div> <!-- timeline-tweet -->
+            </div> <!-- timeline-tweetlist-tweet -->
+          </div> <!-- tw-block-parent -->
+          <div class="button-section" id="button-section2">
+            <button onclick="RightButton()" class="button" type="button">Real</button>
+          </div> <!-- button-section -->
+        </div> <!-- wrapper -->
+      </div> <!-- Trump -->
+
+
+      <div id="Shakespeare" class="tabcontent">
+        <!-- <h1 id="S"> Can you find the real Shakespeare? </h1> -->
+          <!-- Left text box. -->
+          <div class="wrapper"> 
+            <div class="tw-block-parent">
+              <div class="stimeline-TweetList-tweet">
+                  <img style="display: none" class= "image_real" id="s-image_real" src={{ url_for("static", filename="Shakespeare-Smiles-Wink-Headshot.png" )}}
+                  alt="Real">
+                <div  class="stimeline-Tweet-text" id="stimeline-Tweet-text">
+                  <pre style="white-space: pre-wrap; word-break: keep-all;">{{ real_shake }}</pre>
+                </div> <!-- tweet text -->
+              </div> <!-- timeline-tweetlist-tweet -->
+            </div> <!-- tw-block-parent -->
+            <div class="button-section" id="sbutton-section">
+              <button onclick="ShakespeareLeftButton()" class="sbutton" type="button">Real</button>
+            </div> <!-- button-section -->
+          </div> <!-- wrapper -->
+        
+          <!-- Right text box. -->
+          <div class="wrapper">
+            <div class="tw-block-parent" id="stw-block-parent">
+                
+              <div class="stimeline-TweetList-tweet2" id= "stimeline-TweetList-tweet2">
+                  <img style="display: none" class= "image" id="s-image" src={{ url_for("static", filename="robot_stare_2.png" )}}
+                  alt="Fake">
+                <div  class="stimeline-Tweet-text" id="stimeline-Tweet-text2">
+                  <pre style="white-space: pre-wrap; word-break: keep-all;">{{ fake_shake }}</pre>
+                </div> <!-- tweet text -->
+              </div> <!-- timeline-tweetlist-tweet -->
+            </div> <!-- tw-block-parent -->
+            <div class="button-section" id="sbutton-section2">
+              <button onclick="ShakespeareRightButton()" class="sbutton" type="button">Real</button>
+            </div> <!-- button-section -->
+          </div> <!-- wrapper -->
+      </div> <!-- Shakespeare -->
+
+      <div id="About" class="tabcontent">
+        <div class="aboutimagewrap">
+          <div class="aboutimage">
+            <image id="Ethan" src={{ url_for("static", filename="0.jpeg" ) }} style="width:260px;height:260px;">
+            <h3>Ethan Haik</h3>
+          </div>
+          <div class="aboutimage">
+            <image id="Spike" src={{ url_for("static", filename="IMG_0376 2.jpeg" ) }} style="width:200px;height:260px;">
+            <h3>Schuyler Jackson</h3>
+          </div>
+        </div>
+        <p>
+              Hey, welcome to our website. We built this to showcase our final project for Google's Applied Machine Learning Intensive (AMLI).
+              Using cutting edge language modeling techniques we generate fake tweets and Shakespeare and ask you the user, Which one is real?
+        </p>
+        <p>
+            Producing fake tweets is nothing new, in our research we came across many examples, one particularly good example was 
+            <a href="https://twitter.com/DeepDrumpf?lang=en">DeepDrumpf</a>
+            created by @BradHayes. Most of the model structures were some variation of LSTM node Recurrent Neural Networks, but we hadn't 
+            seen any use of the gpt-2 model to generate tweets. We thought this might be due to it's relatively new release and we were happy
+            to integrate what <a href="https://openai.com/blog/better-language-models/">Open ai's</a> 
+            has done so well into our application.
+        </p>
+        <p>
+              In February 2019 the ML community saw a great advance in language modeling with Openai's 
+              release of their gpt-2 117M model. They have kept the model used in the paper out of the public sphere, but the smaller 
+              model still produces some convincing results. We want to know what this means for the future of information?
+        </p>
+
+      </div> <!-- About-->
+    </div> <!-- section -->
+
+    <div id="footer">
+      <p>ethanhaik@ucla.edu || schuyler.jackson@berkeley.edu</p>
+    </div> <!-- footer-->
+  </body>
+</html>
+
